@@ -1,51 +1,190 @@
-# Welcome to your Expo app 👋
+Perfect 👍
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Berarti kita lanjut dengan asumsi:
 
-## Get started
+* ✅ Proyek kamu **ComicKunMart** adalah aplikasi mobile daftar belanja
+* ✅ Dibuat dengan **Expo React Native**, **Zustand** untuk state management, dan **Expo Router** untuk navigasi
+* ✅ Nama tetap: **ComicKunMart**
 
-1. Install dependencies
+Berikut versi **README final** yang sudah disesuaikan sepenuhnya dengan proyek kamu 👇
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+````markdown
+# 🛍️ ComicKunMart — Aplikasi Daftar Belanja (Expo React Native)
 
-   ```bash
-   npx expo start
-   ```
+**ComicKunMart** adalah aplikasi mobile sederhana berbasis **Expo React Native** yang memungkinkan pengguna mengelola daftar belanja mereka.  
+Aplikasi ini dirancang dengan navigasi berbasis file menggunakan **Expo Router**, manajemen state global dengan **Zustand**, serta tampilan daftar interaktif menggunakan **FlatList**.  
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## ✨ Fitur Utama
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### 🧠 State Management (Zustand)
+Aplikasi ini menggunakan **Zustand** untuk mengelola data daftar belanja dengan store global yang berisi:
+- **Array items belanja**:
+  ```ts
+  {
+    id: string;
+    name: string;
+    quantity: number;
+    category?: string;
+    purchased: boolean;
+  }
+````
 
-## Get a fresh project
+* Fungsi-fungsi utama:
 
-When you're ready, run:
+  * `addItem` → Menambah item baru
+  * `removeItem` → Menghapus item berdasarkan ID
+  * `togglePurchased` → Mengubah status “sudah dibeli / belum”
+  * `editItem` → Mengedit item yang sudah ada
 
-```bash
-npm run reset-project
+> Store disimpan di `store/useStore.ts`.
+
+---
+
+### 🧭 Navigasi (Expo Router)
+
+ComicKunMart menggunakan **file-based routing** dari `expo-router` dengan minimal 3 halaman:
+
+1. **Home/ListScreen (`app/index.tsx`)**
+   Menampilkan daftar seluruh item belanja.
+2. **AddItemScreen (`app/add.tsx`)**
+   Form untuk menambahkan item baru ke daftar.
+3. **DetailScreen (`app/[id].tsx`)**
+   Menampilkan detail item dan menyediakan opsi edit serta toggle status.
+
+Navigasi diatur menggunakan **Stack Navigation** untuk transisi halaman yang halus.
+
+---
+
+### 🧾 Komponen Daftar (List)
+
+* Menggunakan **FlatList** untuk menampilkan daftar item.
+* Memiliki **item separator** dan **empty state** yang informatif (`components/ui/EmptyState.tsx`).
+* Setiap item menampilkan:
+
+  * Nama item
+  * Jumlah (quantity)
+  * Status (✔️ sudah dibeli / ❌ belum dibeli)
+* Mendukung **hapus item** melalui tombol Delete.
+
+---
+
+## 🎨 UI & UX
+
+* Desain sederhana dan responsif untuk berbagai ukuran layar.
+* Menggunakan komponen dasar React Native seperti:
+
+  * `TextInput`
+  * `Button`
+  * `Pressable`
+  * `Alert`
+* Feedback visual saat data berubah (misalnya Toast atau Alert).
+* Form validasi agar pengguna tidak bisa menambahkan item kosong.
+
+---
+
+## 💡 Bonus (Opsional)
+
+Beberapa fitur tambahan yang bisa diimplementasikan:
+
+* 🔍 Filter / pencarian item berdasarkan nama atau kategori.
+* 💾 Simpan data secara lokal menggunakan **AsyncStorage**.
+* 🎞️ Animasi saat menambah atau menghapus item.
+* 🌙 Dark Mode Support menggunakan `Appearance` atau `useColorScheme()`.
+
+---
+
+## 🧱 Struktur Direktori Proyek
+
+```
+ComicKunMart/
+├─ app/
+│  ├─ _layout.tsx         # Root layout (navigasi utama)
+│  ├─ index.tsx           # Halaman daftar belanja (Home)
+│  ├─ add.tsx             # Halaman tambah item
+│  └─ [id].tsx            # Halaman detail item
+│
+├─ components/
+│  ├─ ui/
+│  │  ├─ Header.tsx       # Header utama aplikasi
+│  │  ├─ ShoppingItem.tsx # Komponen item belanja
+│  │  └─ EmptyState.tsx   # Tampilan jika daftar kosong
+│
+├─ store/
+│  └─ useStore.ts         # Store Zustand
+│
+├─ assets/                # Gambar, ikon, ilustrasi
+└─ package.json
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## ⚙️ Cara Menjalankan Proyek
 
-To learn more about developing your project with Expo, look at the following resources:
+### 1️⃣ Clone Repositori
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+git clone https://github.com/yogakun01/ComicKunMart.git
+cd ComicKunMart
+```
 
-## Join the community
+### 2️⃣ Install Dependensi
 
-Join our community of developers creating universal apps.
+```bash
+npm install
+# atau
+yarn install
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-# ComicKunMart
+### 3️⃣ Jalankan Aplikasi
+
+```bash
+npx expo start
+```
+
+Lalu buka di emulator atau scan QR code dengan aplikasi **Expo Go**.
+
+---
+
+## 🧩 Teknologi yang Digunakan
+
+| Kebutuhan                    | Teknologi                 |
+| ---------------------------- | ------------------------- |
+| Framework                    | Expo (React Native)       |
+| Navigasi                     | Expo Router               |
+| State Management             | Zustand                   |
+| UI Komponen                  | React Native Components   |
+| Penyimpanan Lokal (opsional) | AsyncStorage              |
+| Animasi (opsional)           | Reanimated / Animated API |
+
+---
+
+## 👨‍💻 Pengembang
+
+* **I Made Sedana Yoga** — Pengembang Aplikasi
+
+  > Primakara University
+  > Proyek tugas: Aplikasi Mobile Daftar Belanja
+
+---
+
+## 🪪 Lisensi
+
+Proyek ini dibuat untuk tujuan pembelajaran dan dapat digunakan secara bebas.
+Lisensi: **MIT License**
+
+---
+
+> “Belanja jadi lebih teratur, hemat waktu, dan seru — dengan ComicKunMart!” 🛍️
+
+---
+
+```
+
+---
+
+Apakah kamu mau saya bantu buatkan juga **file `useStore.ts` lengkap** (zustand store dengan fungsi add, remove, toggle, edit) agar bisa langsung dipakai di proyek ComicKunMart?
+```
