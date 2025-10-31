@@ -1,16 +1,3 @@
-Perfect 👍
-
-Berarti kita lanjut dengan asumsi:
-
-* ✅ Proyek kamu **ComicKunMart** adalah aplikasi mobile daftar belanja
-* ✅ Dibuat dengan **Expo React Native**, **Zustand** untuk state management, dan **Expo Router** untuk navigasi
-* ✅ Nama tetap: **ComicKunMart**
-
-Berikut versi **README final** yang sudah disesuaikan sepenuhnya dengan proyek kamu 👇
-
----
-
-````markdown
 # 🛍️ ComicKunMart — Aplikasi Daftar Belanja (Expo React Native)
 
 **ComicKunMart** adalah aplikasi mobile sederhana berbasis **Expo React Native** yang memungkinkan pengguna mengelola daftar belanja mereka.  
@@ -180,11 +167,4 @@ Lisensi: **MIT License**
 
 > “Belanja jadi lebih teratur, hemat waktu, dan seru — dengan ComicKunMart!” 🛍️
 
----
-
-```
-
----
-
-Apakah kamu mau saya bantu buatkan juga **file `useStore.ts` lengkap** (zustand store dengan fungsi add, remove, toggle, edit) agar bisa langsung dipakai di proyek ComicKunMart?
-```
+LINK LOOM: 
