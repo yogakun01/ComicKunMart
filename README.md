@@ -167,4 +167,6 @@ Lisensi: **MIT License**
 
 > “Belanja jadi lebih teratur, hemat waktu, dan seru — dengan ComicKunMart!” 🛍️
 
-LINK LOOM: https://www.loom.com/share/c5d8cdd9a9244567af12336b7da2aefb (Part 1)
+LINK LOOM: 
+https://www.loom.com/share/c5d8cdd9a9244567af12336b7da2aefb (Part 1)
+https://www.loom.com/share/e80ecb0bb445406fa8938607f96d6b08 (Part 2/final)
